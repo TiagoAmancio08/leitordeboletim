@@ -1,0 +1,111 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IFPB - Home</title>
+  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-white">
+
+  <div class="min-h-screen bg-white flex flex-col">
+    <header class="bg-white border-b-2 border-gray-200 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <img src="{% static 'images/logoifpb.png' %}" 
+     alt="Logo IFPB" 
+     class="h-20 w-auto object-contain">
+        </div>
+
+        <div class="flex gap-6">
+          <a href="#" class="flex items-center gap-4 px-12 py-6 bg-white text-gray-800 border-2 border-gray-300 rounded-xl hover:border-green-600 hover:text-green-700 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+            <i data-lucide="info" class="w-7 h-7"></i>
+            <span class="text-xl">Saiba Mais</span>
+          </a>
+
+          <a href="{% url 'upload' %}" id="btn-upload-home" class="flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:from-green-700 hover:to-green-800 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+            <i data-lucide="file-up" class="w-7 h-7"></i>
+            <span class="text-xl">Fazer Upload</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-green-600 via-green-700 to-emerald-700 py-20">
+      <div class="max-w-7xl mx-auto px-8 text-center">
+        <h1 class="text-white mb-6 text-4xl font-semibold">Análise Automática de Boletins Acadêmicos</h1>
+        <div class="flex items-center justify-center gap-3">
+          <div class="h-1 w-24 bg-white/70"></div>
+          <p class="text-white/95 text-2xl">IFPB</p>
+          <div class="h-1 w-24 bg-white/70"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 py-16 flex-1">
+      <div class="bg-white border-2 border-gray-200 rounded-2xl p-10 hover:border-green-500 transition-all shadow-lg hover:shadow-2xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="bg-green-100 rounded-full p-3">
+            <i data-lucide="book-open" class="w-8 h-8 text-green-700"></i>
+          </div>
+          <h2 class="text-gray-800 text-2xl font-semibold">Sobre o Projeto</h2>
+        </div>
+
+        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+          Este projeto foi desenvolvido no
+          <strong class="text-green-700">Instituto Federal da Paraíba (IFPB)</strong>
+          pelos alunos <strong>Laís</strong>, <strong>Rayssa</strong>, <strong>Tiago</strong>,
+          sob orientação dos professores <strong>Paulo</strong> e <strong>Rodrigo</strong>.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed text-lg">
+          A plataforma tem como objetivo
+          <strong class="text-green-700">automatizar a análise de boletins acadêmicos</strong>.
+        </p>
+
+      </div>
+    </div>
+
+    <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="flex items-center gap-3 mb-8">
+          <i data-lucide="mail" class="w-8 h-8 text-green-400"></i>
+          <h2 class="text-white text-2xl">Contatos da Equipe</h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+          <div>
+            <p class="text-white/90 mb-1">Laís</p>
+            <a href="mailto:lais.izabely@academico.ifpb.edu.br" class="text-green-400 hover:text-green-300">lais.izabely@academico.ifpb.edu.br</a>
+          </div>
+          <div>
+            <p class="text-white/90 mb-1">Prof. Paulo</p>
+            <a href="mailto:pppp@ifpb.edu.br" class="text-green-400 hover:text-green-300">pppp@ifpb.edu.br</a>
+          </div>
+          <div>
+            <p class="text-white/90 mb-1">Rayssa</p>
+            <a href="mailto:rayssa.emidio@academico.ifpb.edu.br" class="text-green-400 hover:text-green-300">rayssa.emidio@academico.ifpb.edu.br</a>
+          </div>
+          <div>
+            <p class="text-white/90 mb-1">Prof. Rodrigo</p>
+            <a href="mailto:pppp@ifpb.edu.br" class="text-green-400 hover:text-green-300">pppp@ifpb.edu.br</a>
+          </div>
+          <div>
+            <p class="text-white/90 mb-1">Tiago</p>
+            <a href="mailto:tiago.amancio@academico@ifpb.edu.br" class="text-green-400 hover:text-green-300">tiago.amancio@academico.ifpb.edu.br</a>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+          <p class="text-gray-400">Instituto Federal da Paraíba - IFPB © 2025</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
