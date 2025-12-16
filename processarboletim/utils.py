@@ -196,5 +196,18 @@ def gerar_relatorio(file_obj, opcao="1"):
         pdf.showPage()
 
     pdf.save()
-    final_pdf.seek(0)
-    return final_pdf.getvalue(), nome_pdf
+    final_pdf.seek(0) 
+    
+    risco_df = df[df[nota_col_name] < 70].copy() if not df.empty else df.copy()
+    alunos_em_risco = []
+    for _, r in risco_df.iterrows():
+        matricula = str(r["Matrícula"]) if "Matrícula" in r else ""
+        nome = str(r["Nome"]) if "Nome" in r else ""
+        nota_val = r[nota_col_name] if nota_col_name in r else 0
+        try:
+            nota_val = float(nota_val)
+        except Exception:
+            nota_val = 0.0
+        alunos_em_risco.append({"matricula": matricula, "nome": nome, "nota": nota_val})
+
+    return final_pdf.getvalue(), nome_pdf, alunos_em_risco
