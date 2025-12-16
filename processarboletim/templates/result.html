@@ -1,8 +1,4 @@
 {% load static %}
-<p style="color:red; font-size:20px;">
-  alunos_em_risco existe? → {{ alunos_em_risco|default:"NÃO EXISTE" }}
-</p>
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -14,6 +10,9 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
+  <p style="color:red; font-size:20px;">
+  alunos_em_risco existe? → {{ alunos_em_risco|default:"NÃO EXISTE" }}
+  </p>
   <header class="bg-white border-b-2 border-gray-200 shadow-md">
     <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
       <div class="flex items-center gap-4">
